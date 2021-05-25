@@ -33,16 +33,9 @@ function checkNumber(array){
 function generatePhoneNumber(array) {
   // seu código aqui
   let check = checkNumber(array);
-  if (!(check[0])) return check[1]; 
-  let arrayAtual = [...array];
-  let finalOrderNumber = [];
+  if (!(check[0])) return check[1];
   let finalNumber = '(';
   for (number of array){
-    //console.log('o index é :', numberIndex,array)
-    //let random = Math.floor(Math.random()*arrayAtual.length);
-    //console.log(random,arrayAtual[random])
-    //finalOrderNumber.push(arrayAtual.splice(random,1))
-    //finalNumber+=arrayAtual.splice(random,1)
     finalNumber+=number
     if (finalNumber.length == 3) finalNumber+=') '
     else if (finalNumber.length == 10) finalNumber+='-'
@@ -53,6 +46,7 @@ function generatePhoneNumber(array) {
 // Desafio 12
 function triangleCheck() {
   // seu código aqui
+  
 }
 
 // Desafio 13
