@@ -68,16 +68,29 @@ function fizzBuzz(array) {
     else if (number%5==0) result.push('buzz');
     else result.push('bug!');
   }
-  return result
-
+  return result;
 }
 
 // Desafio 9
-function encode() {
+function encode(string) {
   // seu código aqui
+  let final = string
+  let vowels = 'aeiou';
+  for (let letter of vowels){
+    let re = new RegExp(`${letter}`,'g')
+    final = final.replace(re,`${vowels.indexOf(letter)+1}`)
+  }
+  return final;
 }
-function decode() {
+function decode(string) {
   // seu código aqui
+  let final = string
+  let vowels = 'aeiou';
+  for (let letter in vowels){
+    let re = new RegExp(`${parseInt(letter)+1}`,'g')
+    final = final.replace(re,`${vowels[parseInt(letter)]}`)
+  }
+  return final;
 }
 
 module.exports = {
