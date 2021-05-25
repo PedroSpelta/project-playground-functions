@@ -28,10 +28,27 @@ function footballPoints(wins, ties) {
   return wins*3+ties*1;
 }
 
-// Desafio 6
-function highestCount() {
-  // seu código aqui
+
+function biggestNumber(array){
+  let result = array[0];
+  for (number of array){
+    if (number > result) result = number;
+  }
+  return result;
 }
+
+// Desafio 6
+function highestCount(array) {
+  // seu código aqui
+  const biggest = biggestNumber(array);
+  let count = 0;
+  for (number of array){
+    if (number == biggest) count +=1;
+  }
+  return count;
+}
+
+
 
 // Desafio 7
 function catAndMouse() {
