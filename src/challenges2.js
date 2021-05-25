@@ -14,8 +14,40 @@ function techList(array,name) {
 }
 
 // Desafio 11
-function generatePhoneNumber() {
+function checkNumber(array){
+  let biggerCount = 0;
+  if (array.length !=11) return [false,'Array com tamanho incorreto.']
+  for (number of array){
+    let actualCount = 0;
+    if (number<0 || number >10) return [false,'não é possível gerar um número de telefone com esses valores'];
+    for (number2 of array){
+      if (number2==number) {
+        actualCount +=1;
+        if (actualCount>2) return [false,'não é possível gerar um número de telefone com esses valores'];
+      }
+    }
+  }
+  return [true]
+}
+
+function generatePhoneNumber(array) {
   // seu código aqui
+  let check = checkNumber(array);
+  if (!(check[0])) return check[1]; 
+  let arrayAtual = [...array];
+  let finalOrderNumber = [];
+  let finalNumber = '(';
+  for (number of array){
+    //console.log('o index é :', numberIndex,array)
+    //let random = Math.floor(Math.random()*arrayAtual.length);
+    //console.log(random,arrayAtual[random])
+    //finalOrderNumber.push(arrayAtual.splice(random,1))
+    //finalNumber+=arrayAtual.splice(random,1)
+    finalNumber+=number
+    if (finalNumber.length == 3) finalNumber+=') '
+    else if (finalNumber.length == 10) finalNumber+='-'
+  }
+  return finalNumber
 }
 
 // Desafio 12
