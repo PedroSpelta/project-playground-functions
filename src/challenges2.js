@@ -18,14 +18,19 @@ function techList(array, name) {
 
 // Desafio 11
 function checkNumber(array) {
-  if (array.length != 11) return [false, 'Array com tamanho incorreto.'];
-  for (number of array) {
+  if (array.length !== 11) return [false, 'Array com tamanho incorreto.'];
+  for (let number of array) {
     let actualCount = 0;
-    if (number < 0 || number > 10) return [false, 'não é possível gerar um número de telefone com esses valores'];
-    for (number2 of array) {
+    if (number < 0 || number > 10) {
+      return [false, 'não é possível gerar um número de telefone com esses valores'];
+    }
+    for (let number2 of array) {
       if (number2 === number) {
         actualCount += 1;
-        if (actualCount > 2) return [false, 'não é possível gerar um número de telefone com esses valores'];
+        if (actualCount > 2) {
+          return [false,
+            'não é possível gerar um número de telefone com esses valores'];
+        }
       }
     }
   }
