@@ -53,8 +53,16 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate() {
+function hydrate(string) {
   // seu código aqui
+  let stringSplited = string.split(' ');
+  let totalWater = 0;
+  if (stringSplited[1] / 1) console.log('sim');
+  for (let index = 0; index < stringSplited.length; index += 1) {
+    if (parseInt(stringSplited[index], 10)) totalWater += parseInt(stringSplited[index], 10);
+  }
+  if (totalWater === 1) return '1 copo de água';
+  return `${totalWater} copos de água`;
 }
 
 module.exports = {
