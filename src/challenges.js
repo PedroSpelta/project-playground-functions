@@ -55,15 +55,18 @@ function catAndMouse(mouse, cat1, cat2) {
   return 'os gatos trombam e o rato foge';
 }
 
+function fizzBuzzSelector(number) {
+  if (number % 3 === 0 && number % 5 === 0) return 'fizzBuzz';
+  if (number % 3 === 0) return 'fizz';
+  if (number % 5 === 0) return 'buzz';
+  return 'bug!';
+}
 // Desafio 8
 function fizzBuzz(array) {
   // seu código aqui
   let result = [];
   for (let number of array) {
-    if (number % 3 === 0 && number % 5 === 0) result.push('fizzBuzz');
-    else if (number % 3 === 0) result.push('fizz');
-    else if (number % 5 === 0) result.push('buzz');
-    else result.push('bug!');
+    result.push(fizzBuzzSelector(number));
   }
   return result;
 }

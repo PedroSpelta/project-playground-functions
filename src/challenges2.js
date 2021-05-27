@@ -50,13 +50,18 @@ function generatePhoneNumber(array) {
   return finalNumber;
 }
 
-// Desafio 12
-function triangleCheck(lineA, lineB, lineC) {
-  // seu código aqui
+function checkTriangleSide(lineA, lineB, lineC) {
   let cond1 = (lineA < lineB + lineC) && (lineA > Math.abs(lineB - lineC));
   let cond2 = (lineB < lineA + lineC) && (lineB > Math.abs(lineA - lineC));
   let cond3 = (lineC < lineA + lineB) && (lineC > Math.abs(lineA - lineB));
-  if (cond1 && cond2 && cond3) return true;
+  return [cond1, cond2, cond3];
+}
+
+// Desafio 12
+function triangleCheck(lineA, lineB, lineC) {
+  // seu código aqui
+  let sidesResult = checkTriangleSide(lineA, lineB, lineC);
+  if (sidesResult[0] && sidesResult[1] && sidesResult[2]) return true;
   return false;
 }
 
