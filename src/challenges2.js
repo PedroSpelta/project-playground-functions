@@ -4,10 +4,13 @@ function techList(array, name) {
   let final = [];
   array = array.sort();
   if (array.length === 0) return 'Vazio!';
-  for (let index in array) {
-    let obj = {};
-    obj.tech = array[parseInt(index)];
-    obj.name = name;
+  for (let index = 0; index < array.length; index += 1) {
+    let obj = {
+      tech: array[parseInt(index, 10)],
+      name,
+    };
+    // obj.tech = array[parseInt(index, 10)];
+    // obj.name = name;
     final.push(obj);
   }
   return final;

@@ -84,8 +84,8 @@ function decode(string) {
   let final = string;
   let vowels = 'aeiou';
   for (let letter in vowels) {
-    let re = new RegExp(`${parseInt(letter) + 1}`, 'g');
-    final = final.replace(re, `${vowels[parseInt(letter)]}`);
+    let re = new RegExp(`${parseInt(letter, 10) + 1}`, 'g');
+    final = final.replace(re, `${vowels[parseInt(letter, 10)]}`);
   }
   return final;
 }
