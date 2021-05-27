@@ -17,23 +17,25 @@ function techList(array, name) {
 }
 
 // Desafio 11
-function checkNumber(array) {
-  if (array.length !== 11) return [false, 'Array com tamanho incorreto.'];
+// function checkNumberSize(array) {
+
+// }
+
+function checkSingleNumber(array) {
+  let countArray = Array(10).fill(0);
   for (let number of array) {
-    let actualCount = 0;
-    if (number < 0 || number > 10) {
+    countArray[number] += 1;
+    if (number < 0 || number > 10 || countArray[number] > 2) {
       return [false, 'não é possível gerar um número de telefone com esses valores'];
     }
-    for (let number2 of array) {
-      if (number2 === number) {
-        actualCount += 1;
-        if (actualCount > 2) {
-          return [false,
-            'não é possível gerar um número de telefone com esses valores'];
-        }
-      }
-    }
   }
+  return [true];
+}
+
+function checkNumber(array) {
+  if (array.length !== 11) return [false, 'Array com tamanho incorreto.'];
+  let checkedEveryNumber = checkSingleNumber(array);
+  if (!(checkedEveryNumber[0])) return checkedEveryNumber;
   return [true];
 }
 
