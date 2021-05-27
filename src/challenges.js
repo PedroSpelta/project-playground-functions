@@ -83,10 +83,14 @@ function decode(string) {
   // seu código aqui
   let final = string;
   let vowels = 'aeiou';
-  for (let letter in vowels) {
-    let re = new RegExp(`${parseInt(letter, 10) + 1}`, 'g');
-    final = final.replace(re, `${vowels[parseInt(letter, 10)]}`);
+  for (let index = 0; index < vowels.length; index += 1) {
+    let re = new RegExp(`${parseInt(index, 10) + 1}`, 'g');
+    final = final.replace(re, `${vowels[parseInt(index, 10)]}`);
   }
+  // for (let letter in vowels) {
+  //   let re = new RegExp(`${parseInt(letter, 10) + 1}`, 'g');
+  //   final = final.replace(re, `${vowels[parseInt(letter, 10)]}`);
+  // }
   return final;
 }
 
